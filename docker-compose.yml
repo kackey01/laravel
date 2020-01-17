@@ -1,0 +1,39 @@
+
+version: "3"
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: ./Dockerfile_nginx
+    volumes:
+      - ./etc/logs/nginx:/etc/nginx/logs
+      - ./etc/nginx/conf.d:/etc/nginx/conf.d
+      - ./laravel:/var/www/laravel
+    ports:
+      - 8081:80
+    links:
+      - phpfpm
+    depends_on:
+      - phpfpm
+  phpfpm:
+    build:
+      context: .
+      dockerfile: ./Dockerfile_php
+    volumes:
+      - ./laravel:/var/www/laravel
+    links:
+      - mysql
+    depends_on:
+      - mysql
+    env_file:
+      ./etc/php/env/setting.env
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - ./mnt/mysql:/var/lib/mysql
+      - ./etc/mysql/mysql_conf:/etc/mysql/conf.d
+    env_file:
+      ./etc/mysql/env/setting.env
+    ports:
+      - 13306:3306
