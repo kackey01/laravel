@@ -20,3 +20,11 @@ RUN apk update && apk add --no-cache \
 
 # install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# install npm
+RUN apk add --update nodejs nodejs-npm
+RUN npm install
+
+# laravel install
+RUN composer create-project laravel/laravel .
+RUN composer require laravel/ui
