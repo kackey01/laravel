@@ -11,7 +11,7 @@ services:
       - ./etc/nginx/conf.d:/etc/nginx/conf.d
       - ./laravel:/var/www/laravel
     ports:
-      - 8081:80
+      - 8081:81
     links:
       - phpfpm
     depends_on:

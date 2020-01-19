@@ -1,0 +1,2 @@
+172.20.0.1 - - [18/Jan/2020:10:38:29 +0900] "GET /favicon.ico HTTP/1.1" 200 0 "http://localhost:8081/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36" "-"
+172.20.0.1 - - [18/Jan/2020:14:19:28 +0900] "GET /favicon.ico HTTP/1.1" 200 0 "http://localhost:8081/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36" "-"
